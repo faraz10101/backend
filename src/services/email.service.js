@@ -125,7 +125,11 @@ async function sendOTPEmail(email, code) {
               <body>
                 <div class="container">
                   <div class="header">
-                    <h1>Relic</h1>
+                   <img 
+                    src="https://relic.shisham.dev/logo.png" 
+                    alt="Relic Logo" 
+                    style="height: 50px; width: auto; display: block; margin: 0 auto 10px auto; filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.15));"
+                  />
                   </div>
                   
                   <div class="content">
@@ -272,7 +276,12 @@ async function sendPasswordResetEmail(email, resetLink) {
               <body>
                 <div class="container">
                   <div class="header">
-                    <h1>🔐 Password Reset Request</h1>
+                    <img 
+                      src="https://relic.shisham.dev/logo.png" 
+                      alt="Relic Logo" 
+                      style="height: 50px; width: auto; display: block; margin: 0 auto 10px auto;"
+                    />
+                    <h1 style="margin: 0; font-size: 24px; font-weight: 700;">Password Reset</h1>
                   </div>
                   
                   <div class="content">
