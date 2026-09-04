@@ -1,13 +1,6 @@
-const mongoose = require('mongoose')
+const mongoose = require('mongoose');
 
 const userSchema = new mongoose.Schema({
-
-    name: {
-        type: String,
-        required: true,
-        minlength: 3,
-        maxlength: 20
-    },
     username: {
         type: String,
         required: true,
@@ -20,8 +13,8 @@ const userSchema = new mongoose.Schema({
         required: true,
         unique: true,
         maxlength: 100,
-        lowercase: true, // Yeh 'User@Email.Com' ko khud 'user@email.com' bana dega
-        trim: true,      // Yeh extra spaces (shuru ya aakhir mein) ko khatam kar dega
+        lowercase: true,
+        trim: true,
         match: [/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/, 'Please provide a valid email address']
     },
     password: {
@@ -34,9 +27,20 @@ const userSchema = new mongoose.Schema({
         type: String,
         enum: ['user', 'admin'],
         default: 'user'
+    },
+    isVerified: { 
+        type: Boolean, 
+        default: false 
+    },
+    verificationCode: { 
+        type: String, 
+        default: null 
+    },
+    verificationCodeExpires: { 
+        type: Date, 
+        default: null 
     }
-})
+});
 
 const userModel = mongoose.model('User', userSchema);
-
 module.exports = userModel;
